@@ -1,0 +1,69 @@
+site_name: Mike Ferrin - Software Engineer Portfolio
+site_description: Software Engineer Portfolio
+site_author: Mike Ferrin
+site_description: >-
+  Mike Ferrin portfolio from a set of Markdown files using MkDocs and Materials.
+
+repo_url: https://git.rockfin.com/mferrin/SeniorPortfolio
+repo_name: "mferrin/SeniorPortfolio"
+edit_uri: ""
+
+nav:
+  - 'Home' : index.md
+  - 'Desirable Characteristics': DesChar.md
+  - 'Training' : AddTrain.md
+theme:
+  name: material
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+
+copyright: Copyright &copy; 2022 Michael Ferrin.
+google_analytics: null
+
+# Plugins
+plugins:
+  - search
+  - awesome-pages
+  - section-index
+  - minify:
+      minify_html: true

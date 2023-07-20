@@ -1,0 +1,29 @@
+#!/bin/sh
+
+DOCKERIMAGE=mferrin/mkdocs
+COMMAND="$1"
+OPTIONS="$2 $3 $4 $5 $6"
+
+case $COMMAND in
+  version) docker run --rm -it -v ${PWD}:/docs $DOCKERIMAGE --version  ;;
+  serve)   docker run --rm -it -p 8000:8000 -v ${PWD}:/docs $DOCKERIMAGE  ;;
+  build)   docker run --rm -it -v ${PWD}:/docs $DOCKERIMAGE build $OPTIONS  ;;
+  deploy)  docker run --rm -it -v ~/.ssh:/root/.ssh -v ${PWD}:/docs $DOCKERIMAGE gh-deploy --force  ;;
+  new)     docker run --rm -it -v ${PWD}:/docs $DOCKERIMAGE new .  ;;
+  * )      echo "\033[1mNAME\033[0m"
+           echo "  \033[1mmd\033[0m - Command shortcut for MkDocs running under Docker"
+           echo ""
+           echo "\033[1mSYNOPSIS\033[0m"
+           echo "  \033[1mmd\033[0m \033[4mcommand\033[0m"
+           echo ""
+           echo "\033[1mCOMMANDS\033[0m"
+           echo "  Supply one of the following commands to:"
+           echo "    \033[1mhelp\033[0m    - Display this helpful information"
+           echo "    \033[1mversion\033[0m - Display MkDocs version information"
+           echo "    \033[1mserve\033[0m   - Run the built-in development server (http://localhost:8000) for the current directory (control-c will stop the server)"
+           echo "    \033[1mbuild\033[0m   - Build the MkDocs documentation in the current directory"
+           echo "    \033[1mdeploy\033[0m  - Deploy documentation to GitHub Pages from the current directory"
+           echo "    \033[1mnew\033[0m     - Create a new MkDocs project in the current directory"
+           echo ""
+           exit 1 ;;
+esac
