@@ -26,4 +26,4 @@ workflows:
            - install-mkdocs-deps:
                filters:
                     branches:
-                        only: main
+                        only: main 
