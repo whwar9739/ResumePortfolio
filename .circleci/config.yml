@@ -14,7 +14,7 @@ jobs:
       - *install
       - add_ssh_keys:
           fingerprints:
-            - "cb:29:a0:8f:cf:b1:72:07:5d:eb:ac:16:34:4a:4e:f8"
+            - "68:04:73:e0:77:a8:4e:57:eb:ad:8e:25:9e:1c:23:30"
       - run:
           name: Deploy new pages
           command: mkdocs gh-deploy -c -v
