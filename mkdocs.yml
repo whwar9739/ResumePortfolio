@@ -4,8 +4,8 @@ site_author: Mike Ferrin
 site_description: >-
   Mike Ferrin portfolio from a set of Markdown files using MkDocs and Materials.
 
-repo_url: https://git.rockfin.com/mferrin/SeniorPortfolio
-repo_name: "mferrin/SeniorPortfolio"
+repo_url: https://github.com/whwar9739/ResumePortfolio
+repo_name: "whwar9739/ResumePortfolio"
 edit_uri: ""
 
 nav:
